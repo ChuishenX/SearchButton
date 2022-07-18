@@ -1,4 +1,4 @@
-document.getElementsByTagName('head')[0].innerHTML += '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"><style>.search {position: relative;margin-top: 1em;margin-bottom: 1em;padding: 5px;padding-left: 0;border-radius: 4px;-webkit-border-radius: 4px;font-size: 0.9375rem;background: none;display: block;line-height: 1.6;}.search::before {position: absolute;top: calc(50% - 24px * 0.5);left: 4px;width: 24px;height: 24px;text-align: center;font-weight: 600;line-height: 24px;vertical-align: middle;}</style>';
+document.getElementsByTagName('head')[0].innerHTML += '<style>.search{color:#fff;display:inline-block;vertical-align:middle;min-width:2.5em;margin-bottom:0;border:1px solid #fff;border-radius:.5em;font-weight:400;font-size:.75em;line-height:1.5;text-align:center;white-space:nowrap;cursor:pointer;-webkit-user-select:none;user-select:none;transition-duration:.4s;touch-action:manipulation;height:30px}</style>';
 function searching() {
     var searches = document.getElementsByTagName('search');
     for (var i = 0; i < searches.length; i++) {
