@@ -29,7 +29,7 @@ function searching() {
             bing: {
                 name: '必应',
                 color: 'gold',
-                url: 'https://www.baidu.com/s?wd='
+                url: 'https://cn.bing.com/search?q='
             },
             github: {
                 name: 'github',
