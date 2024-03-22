@@ -7,7 +7,8 @@ function searching() {
     var searches = document.getElementsByTagName('search');
     for (var i = 0; i < searches.length; i++) {
         var type = searches[i].getAttribute('type');
-        var content = searches[i].getAttribute('content')
+        var content = searches[i].getAttribute('content');
+        var newWindow = searches[i].getAttribute('newWindow')
         searchesJson={
             baidu: {name: '百度', color: 'blue', url: 'https://www.baidu.com/s?wd=', img: 'https://www.baidu.com/favicon.ico'},
             google: {name: 'Google', color: 'green', url: 'https://www.google.com/search?q=', img: 'https://raw.githubusercontent.com/ChuishenX/cdn/main/favicon.ico'},
@@ -17,9 +18,19 @@ function searching() {
             github: {name: 'GitHub', color: 'black', url: 'https://github.com/search?q=', img: 'https://github.githubassets.com/favicons/favicon.svg'},
             yandex: {name: 'Yandex', color: 'crimson', url: 'https://yandex.com/search/?text=', img: 'https://yastatic.net/s3/home-static/_/7c/7ccfee6f1e81b14c5bef535d1ad7b7e0.png'}
         }
+        var nW = "";
+        if (newWindow == 'false') {
+            nW = ';" onclick="window.open(`' + searchesJson[type].url + content + '`)"';
+        }
+        else {
+            nW = ';" onclick="window.open(`' + searchesJson[type].url + content + '`, target=`_self`)"';
+        }
         searches[i].innerHTML = '<button class="search" style="background-color: '+
-            searchesJson[type].color+';" onclick="window.open(`'+searchesJson[type].url + content +'`)" title="请点击使用'+
-            searchesJson[type].name+'搜索该关键词"><img src="'+searchesJson[type].img+'" height="16" width="16" ></img>'+searchesJson[type].name+'搜索"'+content+'"</button>';
+            searches[type].color+
+            nW+
+            ';" title="使用"'+
+            searches[type].name+
+            '搜索"><img src="'+searchesJson[type].img+'" height="16" width="16" ></img>'+searchesJson[type].name+'搜索"'+content+'"</button>';
     }
 }
 //页面加载后运行
